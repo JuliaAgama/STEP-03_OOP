@@ -115,12 +115,18 @@
     box-sizing: border-box;
     width: calcSize(210, $mob);
     margin: 10px auto;
-
+    font-size: calcSize (18, $mob);
+    padding: calcSize(5, $mob);
+    
     @include mq(tablet) {
         width: calcSize(500, $tab);
+        font-size: calcSize (20, $tab);
+        padding: calcSize(8, $tab);
     }
     @include mq(desktop) {
         width: calcSize(500, $desk);
+        font-size: calcSize (20, $desk);
+        padding: calcSize(10, $tab);
     }
 }
 
