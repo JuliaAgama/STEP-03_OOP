@@ -1,0 +1,42 @@
+;// _main-section.scss
+
+/********** MAIN SECTION **********/
+
+.main-section {
+    
+}
+
+.cards-container {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #3fafbc;
+    box-shadow: inset 0 0 10px $brand-color;
+
+    min-height: calcSize(450, $mob);
+    margin: 10px 10px 30px;
+
+    @include mq(tablet) {
+        margin: 10px 20px 40px;
+    }
+    @include mq(desktop) {
+        margin: 20px 30px 40px;
+    }
+
+    &__empty {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: rgba(0, 0, 0, 0.2);
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: calcSize(20, $mob);
+        @include mq(tablet) {
+            font-size: calcSize(50, $tab);
+        }
+        @include mq(desktop) {
+            font-size: calcSize(50, $desk);
+        }
+    }
+}

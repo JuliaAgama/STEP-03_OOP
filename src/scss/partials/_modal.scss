@@ -1,0 +1,143 @@
+;// _modal.scss
+
+/********** MODAL CARD **********/
+
+.modal-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 2px solid #3fafbc;
+    box-shadow: 0 0 10px $brand-color;
+    display: flex;
+    flex-flow: column nowrap;
+    width: calcSize(280, $mob);
+    padding: calcSize(10, $mob);
+
+    @include mq(tablet) {
+        width: calcSize(600, $tab);
+        padding: calcSize(15, $tab);
+    }
+    @include mq(desktop) {
+        width: calcSize(600, $desk);
+        padding: calcSize(15, $desk);
+    }
+}
+
+.close-btn {
+    cursor: pointer;
+    position: absolute;
+    color: $brand-color;
+    font-size: 1.5em;
+    top: calcSize(10, $mob);
+    right: calcSize(5,$mob);
+
+    @include mq(tablet) {
+        top: calcSize(10, $tab);
+        right: calcSize(5,$tab);
+        &:hover {
+            text-shadow: 0 0 2px #333;
+        }
+    }
+    @include mq(desktop) {
+        top: calcSize(10, $desk);
+        right: calcSize(5,$desk);
+    }
+}
+
+.modal-form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+}
+
+.select-doctor {
+    width: 80%;
+    outline: transparent;
+    margin-left: calcSize(20, $mob);
+    margin-bottom: calcSize(20, $mob);
+    font-size: calcSize(20, $mob);
+    
+    @include mq(tablet) {
+        margin-left: calcSize(30, $tab);
+        margin-bottom: calcSize(30, $tab);
+        font-size: calcSize(30, $tab);
+    }
+    @include mq(desktop) {
+        margin-bottom: calcSize(30, $desk);
+        font-size: calcSize(20, $desk);
+    }
+}
+
+.input-box {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 10px auto;
+    width: calcSize(210, $mob);
+    @include mq(tablet) {
+        width: calcSize(500, $tab);
+    }
+    @include mq(desktop) {
+        width: calcSize(500, $desk);
+    }
+}
+.input-field {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    padding: calcSize(5, $mob);
+    font-size: calcSize (18, $mob);
+    @include mq(tablet) {
+        padding: calcSize(8, $tab);
+        font-size: calcSize (20, $tab);
+    }
+    @include mq(desktop) {
+        padding: calcSize(10, $tab);
+        font-size: calcSize (20, $desk);
+    }
+    
+    &::placeholder-shown {
+        text-transform: capitalize;
+        font-size: calcSize (18, $mob);
+        @include mq(tablet) {
+            font-size: calcSize (20, $tab);
+        }
+        @include mq(desktop) {
+            font-size: calcSize (20, $desk);
+        }
+    }
+}
+.comment-field {
+    box-sizing: border-box;
+    width: calcSize(210, $mob);
+    margin: 10px auto;
+
+    @include mq(tablet) {
+        width: calcSize(500, $tab);
+    }
+    @include mq(desktop) {
+        width: calcSize(500, $desk);
+    }
+}
+
+.submit-btn {
+    margin: 20px auto;
+    @include basic-button (calcSize(100, $mob), calcSize(30, $mob));
+    font-size: calcSize(18, $mob);
+    @include mq(tablet) {
+        @include basic-button (calcSize(125, $tab), calcSize(40, $tab));
+        font-size: calcSize(22, $tab);
+        &:hover {
+            box-shadow: 0 0 10px 2px $brand-color;
+            text-shadow: 0 0 1px #333;
+        }
+    }
+    @include mq(desktop) {
+        @include basic-button (calcSize(150, $desk), calcSize(45, $desk));
+        font-size: calcSize(22, $desk);
+    }
+}

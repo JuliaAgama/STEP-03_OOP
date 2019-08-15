@@ -1,0 +1,53 @@
+;// _footer.scss
+
+/********** FOOTER **********/
+
+.footer {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    background: linear-gradient(to right, rgba(48, 138, 148, 0.6),  rgba(146, 235, 245, 0.6));
+}
+
+.footer-text {
+    color: #fff;
+    font-size: .5em;
+    margin: 10px;
+    @include mq(tablet) {
+        font-size: 1em;
+        margin: 10px 20px;
+    }
+    @include mq(desktop) {
+        margin: 20px 30px;
+    }
+}
+.footer-text span {
+    color: $brand-color;
+    font-weight: 700;
+}
+.footer-logo {
+    width: calcSize(30, $mob);
+    margin: 10px;
+
+    @include mq(tablet) {
+        width: calcSize(90, $tab);
+        margin: 10px 20px;
+    }
+    @include mq(desktop) {
+        width: calcSize(120, $desk);
+        margin: 20px 30px;
+    }
+    &__img {
+        max-width: 100%;
+    }
+}
+
+
+/********** BASIC FINAL **********/
+
+.hidden {
+    display: none;
+}

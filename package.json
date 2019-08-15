@@ -1,0 +1,46 @@
+{
+  "name": "step-03_oop",
+  "version": "1.0.0",
+  "description": "Step-03. OOP. Medical cards",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuliaAgama/STEP-03_OOP.git"
+  },
+  "author": "Julia Verchyonova, Olexander Shaporda, Roman Loboda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuliaAgama/STEP-03_OOP/issues"
+  },
+  "homepage": "https://github.com/JuliaAgama/STEP-03_OOP#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-js-minify": "0.0.3",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "gulp-if": "^3.0.0"
+  }
+}
