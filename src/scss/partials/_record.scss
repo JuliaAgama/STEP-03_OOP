@@ -1,0 +1,91 @@
+;// _record.scss
+
+/********** RECORD-CARD **********/
+
+.record-card {
+    position: absolute;
+    background-color: #e6d1fd;
+    top: 10px;
+    left: 10px;
+    box-sizing: border-box;
+    border: 1px solid #3fafbc;
+    box-shadow: 0 0 3px $brand-color;
+    text-transform: capitalize;
+    display: flex;
+    flex-flow: column nowrap;
+    width: calcSize(130, $mob);
+    padding: calcSize(5, $mob);
+
+    @include mq(tablet) {
+        width: calcSize(200, $tab);
+        padding: calcSize(10, $tab);
+    }
+    @include mq(desktop) {
+        width: calcSize(250, $desk);
+        padding: calcSize(15, $desk);
+    }
+
+    &__close {
+        font-size: calcSize(20, $mob);
+
+        @include mq(tablet) {
+            font-size: calcSize(26, $tab);
+            &:hover {
+                color: $brand-color;
+                text-shadow: 0 0 2px #3fafbc;
+            }
+        }
+        @include mq(desktop) {
+            font-size: calcSize(30, $desk);
+        }
+    }
+    &__main-text {
+        line-height: 1.2;
+        font-size: calcSize(12, $mob);
+        margin: 0 0 calcSize(10, $mob);
+
+        @include mq(tablet) {
+            font-size: calcSize(16, $tab);
+            margin-bottom: calcSize(10, $tab);
+        }
+        @include mq(desktop) {
+            font-size: calcSize(20, $desk);
+            margin-bottom: calcSize(10, $desk);
+        }
+    }
+    &__extended-text {
+        line-height: 1.2;
+        font-size: calcSize(10, $mob);
+
+        @include mq(tablet) {
+            font-size: calcSize(14, $tab);
+        }
+        @include mq(desktop) {
+            font-size: calcSize(18, $desk);
+        }
+
+        & span {
+            font-style: italic;
+        }
+    }
+    &__more-less {
+        cursor: pointer;
+        font-weight: 700;
+        color: #3fafbc;
+        margin: calcSize(10, $mob) 0 0;
+        font-size: calcSize(12, $mob);
+
+        @include mq(tablet) {
+            margin-top: calcSize(10, $tab);
+            font-size: calcSize(16, $tab);
+            &:hover {
+                color: $brand-color;
+                text-shadow: 0 0 2px #3fafbc;
+            }
+        }
+        @include mq(desktop) {
+            margin-top: calcSize(10, $desk);
+            font-size: calcSize(20, $desk);
+        }
+    }
+}

@@ -41,18 +41,19 @@ $desk: 1200;
 
 @mixin mq($point) {
     @if $point == tablet {
-      @media only screen and (min-width: 481px) { @content; }
-      // use relative dimensions (% or vw)
-      // can be calculated from function calcSize($px, $base-width)
+        @media only screen and (min-width: 481px) { @content; }
+        // use relative dimensions (% or vw)
+        // can be calculated from function calcSize($px, $base-width)
+        }
+        @else if $point == desktop {
+        @media only screen and (min-width: 993px)  { @content; }
+        // use relative dimensions (% or vw)
+        // can be calculated from function calcSize($px, $base-width)
+        }
     }
-    @else if $point == desktop {
-      @media only screen and (min-width: 993px)  { @content; }
-      // use relative dimensions (% or vw)
-      // can be calculated from function calcSize($px, $base-width)
-    }
-  }
 
   @mixin basic-button($Wpx, $Hpx) { //define common style mixin for branded buttons (width, height) e.g. 10px, 20px
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     width: $Wpx;
     height: $Hpx;
@@ -78,21 +79,44 @@ $desk: 1200;
 
 body {
     width: 100%
+
 }
 
 .wrapper {
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
     background: $brand-color url('../img/background-general.jpg') no-repeat;
     background-size: cover;
     background-position: top center;
     font-family: 'Montserrat', 'courier-std', sans-serif;
     font-size: calcSize(16, $mob);
-    
+
     @include mq(tablet) {
-      font-size: calcSize(16, $tab);
+        font-size: calcSize(16, $tab);
     }
     @include mq(desktop) {
-      font-size: calcSize(16, $desk);
+        font-size: calcSize(16, $desk);
     }
 }
+.close-btn {
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    position: absolute;
+    color: #3fafbc;
+    top: calcSize(5, $mob);
+    right: calcSize(5, $mob);
 
+    @include mq(tablet) {
+        top: calcSize(10, $tab);
+        right: calcSize(10, $tab);
+        &:hover {
+        color: $brand-color;
+        }
+    }
+    @include mq(desktop) {
+        top: calcSize(10, $desk);
+        right: calcSize(10, $desk);
+
+    }
+
+}

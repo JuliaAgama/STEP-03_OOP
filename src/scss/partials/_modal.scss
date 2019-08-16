@@ -4,11 +4,12 @@
 
 .modal-card {
     position: absolute;
+    z-index: 1;
     top: 50%;
     left: 50%;
     box-sizing: border-box;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: #c9f1c8;
     border: 2px solid #3fafbc;
     box-shadow: 0 0 10px $brand-color;
     display: flex;
@@ -17,57 +18,79 @@
     padding: calcSize(10, $mob);
 
     @include mq(tablet) {
-        width: calcSize(600, $tab);
-        padding: calcSize(15, $tab);
+        width: calcSize(560, $tab);
+        padding: calcSize(20, $tab);
     }
     @include mq(desktop) {
         width: calcSize(600, $desk);
-        padding: calcSize(15, $desk);
+        padding: calcSize(20, $desk);
     }
-}
 
-.close-btn {
-    cursor: pointer;
-    position: absolute;
-    color: $brand-color;
-    font-size: 1.5em;
-    top: calcSize(10, $mob);
-    right: calcSize(5,$mob);
+    &__close {
+        font-size: calcSize(20, $mob);
 
-    @include mq(tablet) {
-        top: calcSize(10, $tab);
-        right: calcSize(5,$tab);
-        &:hover {
-            text-shadow: 0 0 2px #333;
+        @include mq(tablet) {
+            font-size: calcSize(30, $tab);
+        }
+        @include mq(desktop) {
+            font-size: calcSize(30, $desk);
         }
     }
-    @include mq(desktop) {
-        top: calcSize(10, $desk);
-        right: calcSize(5,$desk);
-    }
 }
+
 
 .modal-form {
     display: flex;
     flex-flow: column nowrap;
     align-content: center;
+    padding: calcSize(20, $mob);
+
+    @include mq(tablet) {
+        padding: calcSize(30, $tab);
+    }
+    @include mq(desktop) {
+        padding: calcSize(30, $desk);
+    }
 }
 
 .select-doctor {
-    width: 80%;
-    outline: transparent;
-    margin-left: calcSize(20, $mob);
-    margin-bottom: calcSize(20, $mob);
-    font-size: calcSize(20, $mob);
-    
+    font-family: 'Montserrat', sans-serif;
+    outline: #3fafbc;
+    appearance: none;
+    border: 1px solid #666;
+    border-radius: 3px;
+    color: #666;
+    text-transform: capitalize;;
+    box-sizing: border-box;
+    width: calcSize(200, $mob);
+    margin: 0 auto calcSize(20, $mob);
+    padding: calcSize(5, $mob);
+    font-size: calcSize(16, $mob);
+
     @include mq(tablet) {
-        margin-left: calcSize(30, $tab);
+        width: calcSize(450, $tab);
         margin-bottom: calcSize(30, $tab);
-        font-size: calcSize(30, $tab);
+        padding: calcSize(8, $tab);
+        font-size: calcSize(26, $tab);
     }
     @include mq(desktop) {
+        width: calcSize(490, $desk);
         margin-bottom: calcSize(30, $desk);
-        font-size: calcSize(20, $desk);
+        padding: calcSize(20, $tab);
+        font-size: calcSize(26, $desk);
+    }
+    &:focus {
+        background-color: #bef8ff;
+    }
+
+    &__option {
+        font-size: calcSize(12, $mob);
+        @include mq(tablet) {
+            font-size: calcSize(18, $tab);
+        }
+        @include mq(desktop) {
+            font-size: calcSize(18, $desk);
+        }
     }
 }
 
@@ -77,61 +100,82 @@
     flex-flow: column nowrap;
     align-items: center;
     margin: 10px auto;
-    width: calcSize(210, $mob);
+    width: calcSize(200, $mob);
     @include mq(tablet) {
-        width: calcSize(500, $tab);
+        width: calcSize(450, $tab);
     }
     @include mq(desktop) {
-        width: calcSize(500, $desk);
+        width: calcSize(490, $desk);
     }
 }
 .input-field {
+    font-family: 'Montserrat', sans-serif;
+    outline: #3fafbc;
     box-sizing: border-box;
+    border: 1px solid #666;
+    border-radius: 3px;
+    color: #000;
     width: 100%;
-    margin: 0 auto;
+    margin: 3px auto;
     padding: calcSize(5, $mob);
     font-size: calcSize (18, $mob);
     @include mq(tablet) {
         padding: calcSize(8, $tab);
-        font-size: calcSize (20, $tab);
+        font-size: calcSize (24, $tab);
     }
     @include mq(desktop) {
-        padding: calcSize(10, $tab);
-        font-size: calcSize (20, $desk);
+        padding: calcSize(20, $tab);
+        font-size: calcSize (24, $desk);
     }
     
-    &::placeholder-shown {
+    &::placeholder {
+        color: #6ca8af;
         text-transform: capitalize;
         font-size: calcSize (18, $mob);
         @include mq(tablet) {
-            font-size: calcSize (20, $tab);
+            font-size: calcSize (24, $tab);
         }
         @include mq(desktop) {
-            font-size: calcSize (20, $desk);
+            font-size: calcSize (24, $desk);
         }
     }
+    &:focus {
+        background-color: #bef8ff;
+    }
 }
-.comment-field {
+.input-comment {
+    font-family: 'Montserrat', sans-serif;
+    outline: #3fafbc;
     box-sizing: border-box;
-    width: calcSize(210, $mob);
+    border: 1px solid #666;
+    border-radius: 3px;
+    color: #000;
     margin: 10px auto;
-    font-size: calcSize (18, $mob);
+    width: calcSize(200, $mob);
     padding: calcSize(5, $mob);
+    font-size: calcSize (18, $mob);
     
     @include mq(tablet) {
-        width: calcSize(500, $tab);
-        font-size: calcSize (20, $tab);
+        width: calcSize(450, $tab);
         padding: calcSize(8, $tab);
+        font-size: calcSize (20, $tab);
     }
     @include mq(desktop) {
-        width: calcSize(500, $desk);
+        width: calcSize(490, $desk);
+        padding: calcSize(20, $tab);
         font-size: calcSize (20, $desk);
-        padding: calcSize(10, $tab);
+    }
+    &::placeholder {
+        color: #6ca8af;
+    }
+
+    &:focus {
+        background-color: #bef8ff;
     }
 }
 
 .submit-btn {
-    margin: 20px auto;
+    margin: 20px auto 0;
     @include basic-button (calcSize(100, $mob), calcSize(30, $mob));
     font-size: calcSize(18, $mob);
     @include mq(tablet) {

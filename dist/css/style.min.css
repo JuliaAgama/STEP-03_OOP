@@ -67,6 +67,7 @@ body {
 }
 
 .wrapper {
+  font-family: 'Montserrat', sans-serif;
   width: 100%;
   background: #2660b8 url("../img/background-general.jpg") no-repeat;
   background-size: cover;
@@ -87,6 +88,32 @@ body {
   }
 }
 
+.close-btn {
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  position: absolute;
+  color: #3fafbc;
+  top: 1.5625vw;
+  right: 1.5625vw;
+}
+
+@media only screen and (min-width: 481px) {
+  .close-btn {
+    top: 1.30208vw;
+    right: 1.30208vw;
+  }
+  .close-btn:hover {
+    color: #2660b8;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .close-btn {
+    top: 0.83333vw;
+    right: 0.83333vw;
+  }
+}
+
 /********** HEADER **********/
 .header {
   width: 100%;
@@ -102,23 +129,19 @@ body {
 }
 
 .header-logo {
-  width: 28.125vw;
-  height: 28.125vw;
-  margin: 10px;
+  width: 21.875vw;
+  margin: 10px 20px;
 }
 
 @media only screen and (min-width: 481px) {
   .header-logo {
-    width: 16.92708vw;
-    height: 16.92708vw;
-    margin: 10px 20px;
+    width: 15.625vw;
   }
 }
 
 @media only screen and (min-width: 993px) {
   .header-logo {
     width: 10vw;
-    height: 10vw;
     margin: 20px 30px;
   }
 }
@@ -128,14 +151,15 @@ body {
 }
 
 .header-btn {
-  margin: 10px;
+  margin: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
   cursor: pointer;
-  width: 62.5vw;
-  height: 31.25vw;
+  width: 40.625vw;
+  height: 21.875vw;
   background-color: #fff;
   box-sizing: border-box;
   border: 2px solid #3fafbc;
-  border-radius: 7.8125vw;
+  border-radius: 5.46875vw;
   box-shadow: 0 0 10px #2660b8;
   display: -webkit-box;
   display: flex;
@@ -154,6 +178,7 @@ body {
 
 @media only screen and (min-width: 481px) {
   .header-btn {
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     width: 39.0625vw;
     height: 19.53125vw;
@@ -175,8 +200,6 @@ body {
     text-transform: uppercase;
     font-family: 'Montserrat', 'courier-std', sans-serif;
     font-weight: 700;
-    margin: 10px 20px;
-    margin: 10px 20px;
   }
   .header-btn:hover {
     box-shadow: 0 0 10px 2px #2660b8;
@@ -186,6 +209,7 @@ body {
 
 @media only screen and (min-width: 993px) {
   .header-btn {
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     width: 16.66667vw;
     height: 8.33333vw;
@@ -212,7 +236,7 @@ body {
 }
 
 .header-btn__text {
-  font-size: 9.375vw;
+  font-size: 7.5vw;
   padding: 3.125vw;
 }
 
@@ -234,18 +258,20 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
   border: 2px solid #3fafbc;
   box-shadow: inset 0 0 10px #2660b8;
-  min-height: 140.625vw;
+  height: 115.625vw;
   margin: 10px 10px 30px;
 }
 
 @media only screen and (min-width: 481px) {
   .cards-container {
-    margin: 10px 20px 40px;
+    height: 119.79167vw;
+    margin: 5px 20px 20px;
   }
 }
 
 @media only screen and (min-width: 993px) {
   .cards-container {
+    height: 33.33333vw;
     margin: 20px 30px 40px;
   }
 }
@@ -279,13 +305,14 @@ body {
 /********** MODAL CARD **********/
 .modal-card {
   position: absolute;
+  z-index: 1;
   top: 50%;
   left: 50%;
   box-sizing: border-box;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color: #c9f1c8;
   border: 2px solid #3fafbc;
   box-shadow: 0 0 10px #2660b8;
   display: -webkit-box;
@@ -299,41 +326,31 @@ body {
 
 @media only screen and (min-width: 481px) {
   .modal-card {
-    width: 78.125vw;
-    padding: 1.95313vw;
+    width: 72.91667vw;
+    padding: 2.60417vw;
   }
 }
 
 @media only screen and (min-width: 993px) {
   .modal-card {
     width: 50vw;
-    padding: 1.25vw;
+    padding: 1.66667vw;
   }
 }
 
-.close-btn {
-  cursor: pointer;
-  position: absolute;
-  color: #2660b8;
-  font-size: 1.5em;
-  top: 3.125vw;
-  right: 1.5625vw;
+.modal-card__close {
+  font-size: 6.25vw;
 }
 
 @media only screen and (min-width: 481px) {
-  .close-btn {
-    top: 1.30208vw;
-    right: 0.65104vw;
-  }
-  .close-btn:hover {
-    text-shadow: 0 0 2px #333;
+  .modal-card__close {
+    font-size: 3.90625vw;
   }
 }
 
 @media only screen and (min-width: 993px) {
-  .close-btn {
-    top: 0.83333vw;
-    right: 0.41667vw;
+  .modal-card__close {
+    font-size: 2.5vw;
   }
 }
 
@@ -344,28 +361,73 @@ body {
   -webkit-box-direction: normal;
   flex-flow: column nowrap;
   align-content: center;
+  padding: 6.25vw;
+}
+
+@media only screen and (min-width: 481px) {
+  .modal-form {
+    padding: 3.90625vw;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .modal-form {
+    padding: 2.5vw;
+  }
 }
 
 .select-doctor {
-  width: 80%;
-  outline: transparent;
-  margin-left: 6.25vw;
-  margin-bottom: 6.25vw;
-  font-size: 6.25vw;
+  font-family: 'Montserrat', sans-serif;
+  outline: #3fafbc;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #666;
+  border-radius: 3px;
+  color: #666;
+  text-transform: capitalize;
+  box-sizing: border-box;
+  width: 62.5vw;
+  margin: 0 auto 6.25vw;
+  padding: 1.5625vw;
+  font-size: 5vw;
 }
 
 @media only screen and (min-width: 481px) {
   .select-doctor {
-    margin-left: 3.90625vw;
+    width: 58.59375vw;
     margin-bottom: 3.90625vw;
-    font-size: 3.90625vw;
+    padding: 1.04167vw;
+    font-size: 3.38542vw;
   }
 }
 
 @media only screen and (min-width: 993px) {
   .select-doctor {
+    width: 40.83333vw;
     margin-bottom: 2.5vw;
-    font-size: 1.66667vw;
+    padding: 2.60417vw;
+    font-size: 2.16667vw;
+  }
+}
+
+.select-doctor:focus {
+  background-color: #bef8ff;
+}
+
+.select-doctor__option {
+  font-size: 3.75vw;
+}
+
+@media only screen and (min-width: 481px) {
+  .select-doctor__option {
+    font-size: 2.34375vw;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .select-doctor__option {
+    font-size: 1.5vw;
   }
 }
 
@@ -379,25 +441,30 @@ body {
   -webkit-box-align: center;
   align-items: center;
   margin: 10px auto;
-  width: 65.625vw;
+  width: 62.5vw;
 }
 
 @media only screen and (min-width: 481px) {
   .input-box {
-    width: 65.10417vw;
+    width: 58.59375vw;
   }
 }
 
 @media only screen and (min-width: 993px) {
   .input-box {
-    width: 41.66667vw;
+    width: 40.83333vw;
   }
 }
 
 .input-field {
+  font-family: 'Montserrat', sans-serif;
+  outline: #3fafbc;
   box-sizing: border-box;
+  border: 1px solid #666;
+  border-radius: 3px;
+  color: #000;
   width: 100%;
-  margin: 0 auto;
+  margin: 3px auto;
   padding: 1.5625vw;
   font-size: calcSize 18, 320;
 }
@@ -405,98 +472,143 @@ body {
 @media only screen and (min-width: 481px) {
   .input-field {
     padding: 1.04167vw;
-    font-size: calcSize 20, 768;
+    font-size: calcSize 24, 768;
   }
 }
 
 @media only screen and (min-width: 993px) {
   .input-field {
-    padding: 1.30208vw;
-    font-size: calcSize 20, 1200;
+    padding: 2.60417vw;
+    font-size: calcSize 24, 1200;
   }
 }
 
-.input-field::-webkit-input-placeholder-shown {
+.input-field::-webkit-input-placeholder {
+  color: #6ca8af;
   text-transform: capitalize;
   font-size: calcSize 18, 320;
 }
 
-.input-field::-moz-placeholder-shown {
+.input-field::-moz-placeholder {
+  color: #6ca8af;
   text-transform: capitalize;
   font-size: calcSize 18, 320;
 }
 
-.input-field:-ms-input-placeholder-shown {
+.input-field:-ms-input-placeholder {
+  color: #6ca8af;
   text-transform: capitalize;
   font-size: calcSize 18, 320;
 }
 
-.input-field::-ms-input-placeholder-shown {
+.input-field::-ms-input-placeholder {
+  color: #6ca8af;
   text-transform: capitalize;
   font-size: calcSize 18, 320;
 }
 
-.input-field::placeholder-shown {
+.input-field::placeholder {
+  color: #6ca8af;
   text-transform: capitalize;
   font-size: calcSize 18, 320;
 }
 
 @media only screen and (min-width: 481px) {
-  .input-field::-webkit-input-placeholder-shown {
-    font-size: calcSize 20, 768;
+  .input-field::-webkit-input-placeholder {
+    font-size: calcSize 24, 768;
   }
-  .input-field::-moz-placeholder-shown {
-    font-size: calcSize 20, 768;
+  .input-field::-moz-placeholder {
+    font-size: calcSize 24, 768;
   }
-  .input-field:-ms-input-placeholder-shown {
-    font-size: calcSize 20, 768;
+  .input-field:-ms-input-placeholder {
+    font-size: calcSize 24, 768;
   }
-  .input-field::-ms-input-placeholder-shown {
-    font-size: calcSize 20, 768;
+  .input-field::-ms-input-placeholder {
+    font-size: calcSize 24, 768;
   }
-  .input-field::placeholder-shown {
-    font-size: calcSize 20, 768;
+  .input-field::placeholder {
+    font-size: calcSize 24, 768;
   }
 }
 
 @media only screen and (min-width: 993px) {
-  .input-field::-webkit-input-placeholder-shown {
-    font-size: calcSize 20, 1200;
+  .input-field::-webkit-input-placeholder {
+    font-size: calcSize 24, 1200;
   }
-  .input-field::-moz-placeholder-shown {
-    font-size: calcSize 20, 1200;
+  .input-field::-moz-placeholder {
+    font-size: calcSize 24, 1200;
   }
-  .input-field:-ms-input-placeholder-shown {
-    font-size: calcSize 20, 1200;
+  .input-field:-ms-input-placeholder {
+    font-size: calcSize 24, 1200;
   }
-  .input-field::-ms-input-placeholder-shown {
-    font-size: calcSize 20, 1200;
+  .input-field::-ms-input-placeholder {
+    font-size: calcSize 24, 1200;
   }
-  .input-field::placeholder-shown {
-    font-size: calcSize 20, 1200;
+  .input-field::placeholder {
+    font-size: calcSize 24, 1200;
   }
 }
 
-.comment-field {
+.input-field:focus {
+  background-color: #bef8ff;
+}
+
+.input-comment {
+  font-family: 'Montserrat', sans-serif;
+  outline: #3fafbc;
   box-sizing: border-box;
-  width: 65.625vw;
+  border: 1px solid #666;
+  border-radius: 3px;
+  color: #000;
   margin: 10px auto;
+  width: 62.5vw;
+  padding: 1.5625vw;
+  font-size: calcSize 18, 320;
 }
 
 @media only screen and (min-width: 481px) {
-  .comment-field {
-    width: 65.10417vw;
+  .input-comment {
+    width: 58.59375vw;
+    padding: 1.04167vw;
+    font-size: calcSize 20, 768;
   }
 }
 
 @media only screen and (min-width: 993px) {
-  .comment-field {
-    width: 41.66667vw;
+  .input-comment {
+    width: 40.83333vw;
+    padding: 2.60417vw;
+    font-size: calcSize 20, 1200;
   }
+}
+
+.input-comment::-webkit-input-placeholder {
+  color: #6ca8af;
+}
+
+.input-comment::-moz-placeholder {
+  color: #6ca8af;
+}
+
+.input-comment:-ms-input-placeholder {
+  color: #6ca8af;
+}
+
+.input-comment::-ms-input-placeholder {
+  color: #6ca8af;
+}
+
+.input-comment::placeholder {
+  color: #6ca8af;
+}
+
+.input-comment:focus {
+  background-color: #bef8ff;
 }
 
 .submit-btn {
-  margin: 20px auto;
+  margin: 20px auto 0;
+  font-family: 'Montserrat', sans-serif;
   cursor: pointer;
   width: 31.25vw;
   height: 9.375vw;
@@ -523,6 +635,7 @@ body {
 
 @media only screen and (min-width: 481px) {
   .submit-btn {
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     width: 16.27604vw;
     height: 5.20833vw;
@@ -554,6 +667,7 @@ body {
 
 @media only screen and (min-width: 993px) {
   .submit-btn {
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     width: 12.5vw;
     height: 3.75vw;
@@ -576,6 +690,126 @@ body {
     font-family: 'Montserrat', 'courier-std', sans-serif;
     font-weight: 700;
     font-size: 1.83333vw;
+  }
+}
+
+/********** RECORD-CARD **********/
+.record-card {
+  position: absolute;
+  background-color: #e6d1fd;
+  top: 10px;
+  left: 10px;
+  box-sizing: border-box;
+  border: 1px solid #3fafbc;
+  box-shadow: 0 0 3px #2660b8;
+  text-transform: capitalize;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-flow: column nowrap;
+  width: 40.625vw;
+  padding: 1.5625vw;
+}
+
+@media only screen and (min-width: 481px) {
+  .record-card {
+    width: 26.04167vw;
+    padding: 1.30208vw;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .record-card {
+    width: 20.83333vw;
+    padding: 1.25vw;
+  }
+}
+
+.record-card__close {
+  font-size: 6.25vw;
+}
+
+@media only screen and (min-width: 481px) {
+  .record-card__close {
+    font-size: 3.38542vw;
+  }
+  .record-card__close:hover {
+    color: #2660b8;
+    text-shadow: 0 0 2px #3fafbc;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .record-card__close {
+    font-size: 2.5vw;
+  }
+}
+
+.record-card__main-text {
+  line-height: 1.2;
+  font-size: 3.75vw;
+  margin: 0 0 3.125vw;
+}
+
+@media only screen and (min-width: 481px) {
+  .record-card__main-text {
+    font-size: 2.08333vw;
+    margin-bottom: 1.30208vw;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .record-card__main-text {
+    font-size: 1.66667vw;
+    margin-bottom: 0.83333vw;
+  }
+}
+
+.record-card__extended-text {
+  line-height: 1.2;
+  font-size: 3.125vw;
+}
+
+@media only screen and (min-width: 481px) {
+  .record-card__extended-text {
+    font-size: 1.82292vw;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .record-card__extended-text {
+    font-size: 1.5vw;
+  }
+}
+
+.record-card__extended-text span {
+  font-style: italic;
+}
+
+.record-card__more-less {
+  cursor: pointer;
+  font-weight: 700;
+  color: #3fafbc;
+  margin: 3.125vw 0 0;
+  font-size: 3.75vw;
+}
+
+@media only screen and (min-width: 481px) {
+  .record-card__more-less {
+    margin-top: 1.30208vw;
+    font-size: 2.08333vw;
+  }
+  .record-card__more-less:hover {
+    color: #2660b8;
+    text-shadow: 0 0 2px #3fafbc;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .record-card__more-less {
+    margin-top: 0.83333vw;
+    font-size: 1.66667vw;
   }
 }
 
@@ -623,20 +857,19 @@ body {
 
 .footer-logo {
   width: 9.375vw;
-  margin: 10px;
+  margin: 10px 20px;
 }
 
 @media only screen and (min-width: 481px) {
   .footer-logo {
     width: 11.71875vw;
-    margin: 10px 20px;
   }
 }
 
 @media only screen and (min-width: 993px) {
   .footer-logo {
     width: 10vw;
-    margin: 20px 30px;
+    margin: 10px 30px;
   }
 }
 

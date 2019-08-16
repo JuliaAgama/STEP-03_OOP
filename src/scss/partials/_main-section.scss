@@ -3,7 +3,7 @@
 /********** MAIN SECTION **********/
 
 .main-section {
-    
+
 }
 
 .cards-container {
@@ -12,13 +12,15 @@
     border: 2px solid #3fafbc;
     box-shadow: inset 0 0 10px $brand-color;
 
-    min-height: calcSize(450, $mob);
+    height: calcSize(370, $mob);
     margin: 10px 10px 30px;
 
     @include mq(tablet) {
-        margin: 10px 20px 40px;
+        height: calcSize(920, $tab);
+        margin: 5px 20px 20px;
     }
     @include mq(desktop) {
+        height: calcSize(400, $desk);
         margin: 20px 30px 40px;
     }
 

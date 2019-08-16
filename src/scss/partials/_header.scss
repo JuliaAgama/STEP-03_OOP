@@ -11,18 +11,14 @@
 }
 
 .header-logo {
-    width: calcSize(90, $mob);
-    height: calcSize(90, $mob);
-    margin: 10px;
+    width: calcSize(70, $mob);
+    margin: 10px 20px;
 
     @include mq(tablet) {
-        width: calcSize(130, $tab);
-        height: calcSize(130, $tab);
-        margin: 10px 20px;
+        width: calcSize(120, $tab);
     }
     @include mq(desktop) {
         width: calcSize(120, $desk);
-        height: calcSize(120, $desk);
         margin: 20px 30px;
     }
     &__img {
@@ -31,13 +27,11 @@
 }
 
 .header-btn {
-    margin: 10px;
-    @include basic-button (calcSize(200, $mob), calcSize(100, $mob));
-    
+    margin: 10px 20px;
+    @include basic-button (calcSize(130, $mob), calcSize(70, $mob));
+
     @include mq(tablet) {
         @include basic-button (calcSize(300, $tab), calcSize(150, $tab));
-        margin: 10px 20px;
-        margin: 10px 20px;
         &:hover {
             box-shadow: 0 0 10px 2px $brand-color;
             text-shadow: 0 0 1px #333;
@@ -49,19 +43,16 @@
 
     };
 
-   
-
     &__text {
-        font-size: calcSize(30, $mob);
+        font-size: calcSize(24, $mob);
         padding: calcSize(10, $mob);
-        
+
         @include mq(tablet) {
-            font-size: calcSize(45, $tab);            
+            font-size: calcSize(45, $tab);
         }
         @include mq(desktop) {
             font-size: calcSize(30, $desk);
 
         }
-        
     }
 }
