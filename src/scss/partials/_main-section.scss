@@ -13,15 +13,15 @@
     box-shadow: inset 0 0 10px $brand-color;
 
     height: calcSize(370, $mob);
-    margin: 10px 10px 30px;
+    margin: 10px 10px 20px;
 
     @include mq(tablet) {
         height: calcSize(920, $tab);
         margin: 5px 20px 20px;
     }
     @include mq(desktop) {
-        height: calcSize(400, $desk);
-        margin: 20px 30px 40px;
+        height: calcSize(380, $desk);
+        margin: 5px 30px 20px;
     }
 
     &__empty {
