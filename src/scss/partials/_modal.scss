@@ -22,7 +22,7 @@
         padding: calcSize(20, $tab);
     }
     @include mq(desktop) {
-        width: calcSize(600, $desk);
+        width: calcSize(500, $desk);
         padding: calcSize(20, $desk);
     }
 
@@ -46,10 +46,10 @@
     padding: calcSize(20, $mob);
 
     @include mq(tablet) {
-        padding: calcSize(30, $tab);
+        padding: calcSize(20, $tab);
     }
     @include mq(desktop) {
-        padding: calcSize(30, $desk);
+        padding: calcSize(20, $desk);
     }
 }
 
@@ -63,21 +63,21 @@
     text-transform: capitalize;;
     box-sizing: border-box;
     width: calcSize(200, $mob);
-    margin: 0 auto calcSize(20, $mob);
+    margin: 0 auto calcSize(15, $mob);
     padding: calcSize(5, $mob);
     font-size: calcSize(16, $mob);
 
     @include mq(tablet) {
         width: calcSize(450, $tab);
-        margin-bottom: calcSize(30, $tab);
+        margin-bottom: calcSize(15, $tab);
         padding: calcSize(8, $tab);
-        font-size: calcSize(26, $tab);
+        font-size: calcSize(22, $tab);
     }
     @include mq(desktop) {
-        width: calcSize(490, $desk);
-        margin-bottom: calcSize(30, $desk);
-        padding: calcSize(20, $tab);
-        font-size: calcSize(26, $desk);
+        width: calcSize(390, $desk);
+        margin-bottom: calcSize(15, $desk);
+        padding: calcSize(10, $tab);
+        font-size: calcSize(22, $desk);
     }
     &:focus {
         background-color: #bef8ff;
@@ -99,13 +99,13 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin: 10px auto;
+    margin: 5px auto;
     width: calcSize(200, $mob);
     @include mq(tablet) {
         width: calcSize(450, $tab);
     }
     @include mq(desktop) {
-        width: calcSize(490, $desk);
+        width: calcSize(390, $desk);
     }
 }
 .input-field {
@@ -116,7 +116,7 @@
     border-radius: 3px;
     color: #000;
     width: 100%;
-    margin: 3px auto;
+    margin: 2px auto;
     padding: calcSize(5, $mob);
     font-size: calcSize (18, $mob);
     @include mq(tablet) {
@@ -124,7 +124,7 @@
         font-size: calcSize (24, $tab);
     }
     @include mq(desktop) {
-        padding: calcSize(20, $tab);
+        padding: calcSize(10, $tab);
         font-size: calcSize (24, $desk);
     }
     
@@ -150,7 +150,7 @@
     border: 1px solid #666;
     border-radius: 3px;
     color: #000;
-    margin: 10px auto;
+    margin: 5px auto;
     width: calcSize(200, $mob);
     padding: calcSize(5, $mob);
     font-size: calcSize (18, $mob);
@@ -161,8 +161,8 @@
         font-size: calcSize (20, $tab);
     }
     @include mq(desktop) {
-        width: calcSize(490, $desk);
-        padding: calcSize(20, $tab);
+        width: calcSize(390, $desk);
+        padding: calcSize(10, $tab);
         font-size: calcSize (20, $desk);
     }
     &::placeholder {
@@ -178,6 +178,7 @@
     margin: 20px auto 0;
     @include basic-button (calcSize(100, $mob), calcSize(30, $mob));
     font-size: calcSize(18, $mob);
+    
     @include mq(tablet) {
         @include basic-button (calcSize(125, $tab), calcSize(40, $tab));
         font-size: calcSize(22, $tab);

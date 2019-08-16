@@ -15,11 +15,11 @@
     margin: 10px 20px;
 
     @include mq(tablet) {
-        width: calcSize(120, $tab);
+        width: calcSize(100, $tab);
     }
     @include mq(desktop) {
-        width: calcSize(120, $desk);
-        margin: 20px 30px;
+        width: calcSize(100, $desk);
+        margin: 10px 30px;
     }
     &__img {
         max-width: 100%;
@@ -31,15 +31,15 @@
     @include basic-button (calcSize(130, $mob), calcSize(70, $mob));
 
     @include mq(tablet) {
-        @include basic-button (calcSize(300, $tab), calcSize(150, $tab));
+        @include basic-button (calcSize(200, $tab), calcSize(100, $tab));
         &:hover {
             box-shadow: 0 0 10px 2px $brand-color;
             text-shadow: 0 0 1px #333;
         }
     };
     @include mq(desktop) {
-        @include basic-button (calcSize(200, $desk), calcSize(100, $desk));
-        margin: 20px 30px;
+        margin: 10px 30px;
+        @include basic-button (calcSize(180, $desk), calcSize(80, $desk));
 
     };
 
@@ -48,10 +48,10 @@
         padding: calcSize(10, $mob);
 
         @include mq(tablet) {
-            font-size: calcSize(45, $tab);
+            font-size: calcSize(30, $tab);
         }
         @include mq(desktop) {
-            font-size: calcSize(30, $desk);
+            font-size: calcSize(26, $desk);
 
         }
     }
