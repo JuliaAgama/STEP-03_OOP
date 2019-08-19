@@ -26,6 +26,10 @@
         padding: calcSize(20, $desk);
     }
 
+    &--hide {
+        display: none;
+    }
+
     &__close {
         font-size: calcSize(20, $mob);
 
@@ -107,6 +111,14 @@
     @include mq(desktop) {
         width: calcSize(390, $desk);
     }
+
+    &__common--hide {
+        display: none;
+    }
+
+    &__special--hide {
+        display: none;
+    }
 }
 .input-field {
     font-family: 'Montserrat', sans-serif;
@@ -151,6 +163,7 @@
     border-radius: 3px;
     color: #000;
     margin: 5px auto;
+    resize: none;
     width: calcSize(200, $mob);
     padding: calcSize(5, $mob);
     font-size: calcSize (18, $mob);
@@ -172,6 +185,10 @@
     &:focus {
         background-color: #bef8ff;
     }
+
+    &--hide {
+        display: none;
+    }
 }
 
 .submit-btn {
@@ -190,5 +207,9 @@
     @include mq(desktop) {
         @include basic-button (calcSize(150, $desk), calcSize(45, $desk));
         font-size: calcSize(22, $desk);
+    }
+
+    &--hide {
+        display: none;
     }
 }

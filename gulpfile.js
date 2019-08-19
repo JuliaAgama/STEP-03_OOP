@@ -130,7 +130,7 @@ gulp.task('browser-sync', function () {
         server: {
             baseDir: './'
         },
-        tunnel: true
+        // tunnel: true
     });
 });
 
@@ -138,7 +138,7 @@ gulp.task('browser-sync', function () {
 
 gulp.task('watch', function () {
     gulp.watch('src/scss/**/*.scss', gulp.parallel('styles'));
-    gulp.watch('src/js/sections/*.js', gulp.series('scripts-src', 'scripts'));
+    gulp.watch('src/js/partials/*.js', gulp.series('scripts-src', 'scripts'));
     gulp.watch('./*.html').on('change', browserSync.reload);
     gulp.watch('src/img/**/*.+(jpg|png|jpeg|svg)', gulp.parallel('image-min'));
 });

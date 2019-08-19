@@ -32,58 +32,27 @@
 
             <!-- EXAMPLE OF MODAL CARD: -->
             
-            <div class="modal-card" id="modal-card">
+            <div class="modal-card modal-card--hide" id="modal-card">
 
-                <div class="close-btn modal-card__close"><i class="far fa-window-close"></i></div>
+                <div class="close-btn modal-card__close" id="modal-card-close"><i class="far fa-window-close"></i></div>
 
                 <form action="select.php" method="post" class="modal-form" id="modal-form">
                     <select name="select-doctor" id="select-doctor" class="select-doctor" autofocus required>
                         <option class="select-doctor__option--disabled" disabled selected>Select  doctor</option>
-                        <option value="cardio" class="select-doctor__option">cardiologist</option>
-                        <option value="dentist" class="select-doctor__option">dentist</option>
-                        <option value="therapist" class="select-doctor__option">therapist</option>
                     </select>
 
-                    <div class="input-box input-box__common" id="input-box__common">
+                    <div class="input-box input-box__common input-box__common--hide" id="input-box__common">
                         <input type="text" class="input-field" id="input-reason" required placeholder="reason / problem">
-                        <input type="text" class="input-field"  id="input-patient" required placeholder="your full name">
+                        <input type="date" class="input-field" id="input-date" required>
+                        <input type="text" class="input-field" id="input-patient" required placeholder="your full name">
                     </div>
-            
 
-                    <!-- CARDIOLOGIST: -->
-                <!--
-                    <div class="input-box input-box__special" id="input-box__cardio">
-                        <input type="text" class="input-field"  required placeholder="normal blood pressure">
-                        <input type="text" class="input-field"  required placeholder="body mass index">
-                        <input type="text" class="input-field"  required placeholder="past deseases">
-                        <input type="text" class="input-field"  required placeholder="your age (full years)">
-                    </div>
-                -->
-
-                    <!-- DENTIST: -->
-                <!--
-                    <div class="input-box input-box__special" id="input-box__dentist">
-                        <input type="text" class="input-field"  required placeholder="Last visit date">
-                    </div>
-                -->
-
-                    <!-- THERAPIST: -->
-                <!--
-                    <div class="input-box input-box__special" id="input-box__therapist">
-                        <input type="text" class="input-field"  required placeholder="Last visit date">
-                        <input type="text" class="input-field"  required placeholder="your full age">
-                    </div>
-                -->
-
-        
-                    <textarea name="input-comment" class="input-comment" id="input-comment" maxlength ="400" rows="3" wrap="hard" placeholder="Your comments here"></textarea>
-                    <style>textarea { resize: none;}</style>
-
-                    <input type="submit" class="submit-btn" id="submit-btn__modal" value="CREATE">
+                    <textarea name="input-comment" class="input-comment input-comment--hide" id="input-comment" maxlength ="400" rows="3" wrap="hard" placeholder="Your comments here"></textarea>
+                    
+                    <input type="submit" class="submit-btn submit-btn--hide" id="submit-btn__modal" value="CREATE">
 
                 </form>
             </div>
-        
 
         </div>
 
