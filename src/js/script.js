@@ -170,6 +170,17 @@
     }
     const createCard = createCards();
 
+    // Отображение сохраненных карточек
+    ;(function() {
+        const currentCards = window.localStorage.getItem('ClientCard');
+        if (currentCards) {
+            document.querySelector('.cards-container__empty').remove('cards-container__empty--hide');
+            
+            const arr = JSON.parse(currentCards);
+            arr.forEach(e => createCard(e));
+        }
+    })();
+
 })();
 function getDoctors (){
     return [
