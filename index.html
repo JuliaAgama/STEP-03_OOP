@@ -15,128 +15,70 @@
 </head>
 <body>
 
-<div class="wrapper">
+    <div class="wrapper">
 
-    <header class="header" id="header">
-        <a class="header-logo" id = "header-logo" href="#">
-            <img class="header-logo__img" src="dist/img/logo-main.png" alt="i.ball.it">
-        </a>
-        <div class="header-btn" id="header-btn">
-            <p class="header-btn__text">Create visit</p>
-        </div>
-    </header>
-
-    <main class="main-section" id="main-section">
-
-        <div class="modal-wrapper" id="modal-wrapper">
-
-            <!-- EXAMPLE OF MODAL CARD: -->
-            
-            <div class="modal-card modal-card--hide" id="modal-card">
-
-                <div class="close-btn modal-card__close" id="modal-card-close"><i class="far fa-window-close"></i></div>
-
-                <form action="select.php" method="post" class="modal-form" id="modal-form">
-                    <select name="select-doctor" id="select-doctor" class="select-doctor" autofocus required>
-                        <option class="select-doctor__option--disabled" disabled selected>Select  doctor</option>
-                    </select>
-
-                    <div class="input-box input-box__common input-box__common--hide" id="input-box__common">
-                        <input type="text" class="input-field" id="input-reason" required placeholder="reason / problem">
-                        <input type="date" class="input-field" id="input-date" required>
-                        <input type="text" class="input-field" id="input-patient" required placeholder="your full name">
-                    </div>
-
-                    <textarea name="input-comment" class="input-comment input-comment--hide" id="input-comment" maxlength ="400" rows="3" wrap="hard" placeholder="Your comments here"></textarea>
-                    
-                    <input type="submit" class="submit-btn submit-btn--hide" id="submit-btn__modal" value="CREATE">
-
-                </form>
+        <header class="header" id="header">
+            <a class="header-logo" id = "header-logo" href="#">
+                <img class="header-logo__img" src="dist/img/logo-main.png" alt="i.ball.it">
+            </a>
+            <div class="header-btn" id="header-btn">
+                <p class="header-btn__text">Create visit</p>
             </div>
-
-        </div>
-
-        <div class="cards-container" id="cards-container">
-            <p class="cards-container__empty">No items have been added</p>
-
-
-            <!-- EXAMPLE OF RECORD CARD: -->
+        </header>
     
-            <div class="record-card" id="record-card_1" data-index="1">
+        <main class="main-section" id="main-section">
     
-                <div class="close-btn record-card__close"><i class="fas fa-trash-alt"></i></div>
+            <div class="modal-wrapper" id="modal-wrapper">
     
-                <div class="record-card__main-text">
-                    <p id="patient-name">Alen Delon</p>
-                    <p id="doctor-selected">Cardiologist</p>
-                </div>
+                <!-- EXAMPLE OF MODAL CARD: -->
+                
+                <div class="modal-card modal-card--hide" id="modal-card">
     
-                <div class="record-card__extended-text">
-                    <p id="reason">Problem: <span>headache</span></p>
+                    <div class="close-btn modal-card__close" id="modal-card-close"><i class="far fa-window-close"></i></div>
     
-                    <!-- EXTENDED RECORD for CARDIOLOGIST: -->
+                    <form action="select.php" method="post" class="modal-form" id="modal-form">
+                        <select name="select-doctor" id="select-doctor" class="select-doctor" autofocus required>
+                            <option class="select-doctor__option--disabled" disabled selected>Select  doctor</option>
+                        </select>
     
-                    <div class="record-card__special" id="record-card__cardio">
-                        <p>pressure: <span>120-80</span></p>
-                        <p>body mass index: <span>2.7</span></p>
-                        <p>past deseases: <span>nothing</span></p>
-                        <p>age (full years): <span>36</span></p>
-                    </div>
+                        <div class="input-box input-box__common input-box__common--hide" id="input-box__common">
+                            <input type="text" class="input-field" id="input-reason" required placeholder="reason / problem" data-id="reason">
+                            <input type="date" class="input-field" id="input-date" required placeholder="Date visit" data-id="date">
+                            <input type="text" class="input-field" id="input-patient" required placeholder="your full name" data-id="name">
+                        </div>
     
-                    <!-- EXTENDED RECORD for DENTIST: -->
-    <!--
-                    <div class="record-card__special" id="record-card__dentist">
-                        <p>last visit: <span>Nov-16'2016</span></p>
-                    </div>
-                        -->
+                        <textarea name="input-comment" class="input-comment input-comment--hide" id="input-comment" maxlength ="400" rows="3" wrap="hard" placeholder="Your comments here" data-id="comment"></textarea>
+                        
+                        <input type="submit" class="submit-btn submit-btn--hide" id="submit-btn__modal" value="CREATE">
     
-                    <!-- EXTENDED RECORD for Therapist -->
-    <!--
-                    <div class="record-card__special" id="record-card__therapist">
-                        <p>last visit: <span>Nov-16'2016</span></p>
-                        <p>age (full years): <span>36</span></p>
-                    </div> -->
-    
-                </div>
-    
-    
-    
-    
-                <div class="record-card__more-less">
-                    <p class="record-card__more-less--more">show more</p>
-                    <p class="record-card__more-less--less hidden">show less</p>
+                    </form>
                 </div>
     
             </div>
+    
+            <div class="cards-container" id="cards-container">
+                <p class="cards-container__empty">No items have been added</p>
+            </div>
+    
+    
+    
+    
+    
+        </main>
+    
+    
+        <footer class="footer" id="footer">
+            <p class="footer-text" id="footer-text">&copy; Copyright 2019 <span> i.ball.it </span> | All Rights Reserved</p>
+            <div class="footer-logo" id="footer-logo">
+                <img class="footer-logo__img" src="dist/img/logo-text.png" alt="i.ball.it">
+            </div>
+        </footer>
+    
+    
+    
+    </div>
 
-
-        </div>
-
-
-
-
-
-    </main>
-
-
-    <footer class="footer" id="footer">
-        <p class="footer-text" id="footer-text">&copy; Copyright 2019 <span> i.ball.it </span> | All Rights Reserved</p>
-        <div class="footer-logo" id="footer-logo">
-            <img class="footer-logo__img" src="dist/img/logo-text.png" alt="i.ball.it">
-        </div>
-    </footer>
-
-
-
-</div>
-
-
-
-
-
-
-
-<script src="dist/js/script.min.js"></script>
+    <script src="dist/js/script.min.js"></script>
 
 </body>
 </html>
