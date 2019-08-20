@@ -216,4 +216,13 @@
         return resObj
     }
 
+    // Сохранение карточек в localStorage
+    function setCardStorage (obj) {
+        const currentCards = window.localStorage.getItem('ClientCard');
+        const allCards = currentCards ? JSON.parse(currentCards) : [];
+
+        allCards.push(obj);
+        window.localStorage.setItem('ClientCard',JSON.stringify(allCards));
+    }
+
 })();
