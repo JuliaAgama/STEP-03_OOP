@@ -197,4 +197,23 @@
         return resCheck
     }
 
+    // Получение всех обязательно заполненных полей
+    function getAllInputForm (idEl) {
+        resObj = {};
+        const arrInp = document.querySelectorAll(`#${idEl} [required]`);
+    
+        arrInp.forEach(e => {
+            if (e.parentElement.classList.value.indexOf('hide') < 0) {
+                if (e.tagName === 'SELECT') {
+                    let el = e.options[e.options.selectedIndex];
+                    resObj[el.getAttribute('data-id')] = el.value;
+                } else {
+                    resObj[e.getAttribute('data-id')] = e.value;
+                }
+            }
+        })
+
+        return resObj
+    }
+
 })();
