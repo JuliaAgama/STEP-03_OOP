@@ -130,7 +130,7 @@ gulp.task('browser-sync', function () {
         server: {
             baseDir: './'
         },
-        tunnel: true
+        // tunnel: true
     });
 });
 

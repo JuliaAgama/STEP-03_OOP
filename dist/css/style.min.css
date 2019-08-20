@@ -338,6 +338,10 @@ body {
   }
 }
 
+.modal-card--hide {
+  display: none;
+}
+
 .modal-card__close {
   font-size: 6.25vw;
 }
@@ -456,6 +460,14 @@ body {
   }
 }
 
+.input-box__common--hide {
+  display: none;
+}
+
+.input-box__special--hide {
+  display: none;
+}
+
 .input-field {
   font-family: 'Montserrat', sans-serif;
   outline: #3fafbc;
@@ -561,6 +573,7 @@ body {
   border-radius: 3px;
   color: #000;
   margin: 5px auto;
+  resize: none;
   width: 62.5vw;
   padding: 1.5625vw;
   font-size: calcSize 18, 320;
@@ -604,6 +617,10 @@ body {
 
 .input-comment:focus {
   background-color: #bef8ff;
+}
+
+.input-comment--hide {
+  display: none;
 }
 
 .submit-btn {
@@ -691,6 +708,10 @@ body {
     font-weight: 700;
     font-size: 1.83333vw;
   }
+}
+
+.submit-btn--hide {
+  display: none;
 }
 
 /********** RECORD-CARD **********/
