@@ -181,6 +181,22 @@
         }
     })();
 
+    // Проверка заполенніх полей
+    function checkRequired (idEl) {
+        let resCheck = true;
+        const arrCheck = document.querySelectorAll(`#${idEl} [required]`);
+    
+        arrCheck.forEach(e => {
+            if (e.parentElement.classList.value.indexOf('hide') < 0) {
+                if (e.value.length === 0) {
+                    resCheck = false;
+                }
+            }
+        })
+
+        return resCheck
+    }
+
 })();
 function getDoctors (){
     return [
