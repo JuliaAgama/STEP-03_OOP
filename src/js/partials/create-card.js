@@ -225,4 +225,34 @@
         window.localStorage.setItem('ClientCard',JSON.stringify(allCards));
     }
 
+    // Сабмит формы карточки
+    submitModal.addEventListener('click', function(e) {
+        const idForm = this.parentElement.getAttribute('id');
+
+        if (checkRequired(idForm)) {
+            const type = selectDoctor.value;
+            const comment  = document.getElementById('input-comment');
+
+            let allInp = getAllInputForm(idForm);
+            allInp[comment.getAttribute('data-id')] = comment.value;
+            
+            createCard(allInp);
+
+            const infoHasCards = document.querySelector('.cards-container__empty');
+            infoHasCards ? infoHasCards.remove('cards-container__empty--hide') : null;
+
+            if (type === 'cardiologist') {
+                setCardStorage( new Cardiologist(allInp) );
+
+            } else if (type === 'dentist'){
+                setCardStorage( new Dentist(allInp) );
+
+            } else if (type === 'therapist') {
+                setCardStorage( new Therapist(allInp) );
+            }
+
+            modalCard.classList.add('modal-card--hide');            
+        }
+    })
+
 })();
