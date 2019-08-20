@@ -75,6 +75,56 @@
         }
     })
 
+    // Хелпер для поиск родительских елементов по айди.
+    function findAncestor (el, id) {
+        while ((el = el.parentElement) && el.id !== id);
+        return el;
+    }
+
+    // Минимальная дата приема = текущая дата
+    function setMinDate(currDate, el) {
+        let year = currDate.getFullYear(),
+            month = (currDate.getMonth() +1 ) > 9 ? (currDate.getMonth() +1 ) : '0' + (currDate.getMonth() +1 ),
+            date = currDate.getDate();
+        el.setAttribute('min', `${year}-${month}-${date}`);
+    }
+
+    setMinDate(new Date(), inputDate);
+
+
+    // Наполнение селекта докторов и полей с БД
+    doctors.forEach(e => {
+
+        // Селекты
+        const wrapperOption = document.createElement('div');
+        wrapperOption.innerHTML = `<option value="${e.type}" data-id="type" class="select-doctor__option">${e.type}</option>`;
+        selectDoctor.appendChild(wrapperOption.firstElementChild)
+
+        // Поля к заполеннию
+        const wrapperDiv = document.createElement('div');
+        wrapperDiv.innerHTML = `<div class="input-box input-box__special input-box__special--hide" id="input-box__${e.type}">`;
+
+        e.fields.forEach(ev => {
+            const wrapperInput = document.createElement('div');
+            wrapperInput.innerHTML = `<input class="input-field" type="${ev.type}" placeholder="${ev.name}" data-id="${ev.id}" required="">`;
+            wrapperDiv.firstElementChild.appendChild(wrapperInput.firstElementChild);
+        })
+
+        inputComment.before(wrapperDiv.children[0]);
+    })
+
+    // Выбор врача и отображение полей
+    selectDoctor.addEventListener('change', function(e) {
+        inputCommon.classList.remove('input-box__common--hide');
+        inputComment.classList.remove('input-comment--hide');
+        submitModal.classList.remove('submit-btn--hide');
+
+        const lastSelect =  document.querySelector('.input-box__special:not(.input-box__special--hide)');
+        if (lastSelect) lastSelect.classList.add('input-box__special--hide');
+        
+        document.getElementById(`input-box__${this.value}`).classList.remove('input-box__special--hide');
+    })
+
 })();
 function getDoctors (){
     return [
