@@ -125,6 +125,51 @@
         document.getElementById(`input-box__${this.value}`).classList.remove('input-box__special--hide');
     })
 
+    // Создание карточки
+    function createCards () {
+        let lastIndexCards = 0;
+
+        return function({ name, type, reason, ...other }) {
+            let index = ++lastIndexCards;
+            
+            let str = '';
+            for(let i in other) {
+                const nameVal = document.querySelector(`[data-id=${i}]`).getAttribute('placeholder');
+                str += `<p>${nameVal}: <span>${other[i]}</span></p>`;
+            }
+
+            const wrapperDiv = document.createElement('div');
+            wrapperDiv.innerHTML = `
+                <div class="record-card" id="record-card_${index}" data-index="${index}">
+                <div class="close-btn record-card__close">
+                    <i class="fas fa-trash-alt"></i>
+                </div>
+
+                <div class="record-card__main-text">
+                    <p id="patient-name">${name}</p>
+                    <p id="doctor-selected">${type}</p>
+                </div>
+
+                <div class="record-card__extended-text">
+                    <p id="reason">Problem: <span>${reason}</span></p>
+
+                    <div class="record-card__special hidden" id=record-card__${type}>
+                     ${str}
+                    </div>
+                </div>
+                    
+                <div class="record-card__more-less">
+                    <p class="record-card__more-less--more">show more</p>
+                    <p class="record-card__more-less--less hidden">show less</p>
+                </div>
+                </div>
+            `
+
+            cardsContainer.appendChild(wrapperDiv.firstElementChild);
+        }
+    }
+    const createCard = createCards();
+
 })();
 function getDoctors (){
     return [
