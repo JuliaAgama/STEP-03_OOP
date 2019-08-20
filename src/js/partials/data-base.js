@@ -4,20 +4,24 @@ function getDoctors (){
             type: "cardiologist",
             fields: [
                 {
-                    name: "Обычное давление",
-                    type: "text"
+                    name: "Normal pressure",
+                    type: "text",
+                    id: "pressure"
                 },
                 {
-                    name: "Индекс массы тела",
-                    type: "text"
+                    name: "Body mass index",
+                    type: "text",
+                    id: "massIndex"
                 },
                 {
-                    name: "Перенесенные заболевания сердечно-сосудистой системы",
-                    type: "text"
+                    name: "Past diseases of the cardiovascular system",
+                    type: "text",
+                    id: "pastDiseases"
                 },
                 {
-                    name: "Возраст",
-                    type: "text"
+                    name: "Age",
+                    type: "text",
+                    id: "age"
                 }
             ]
         },
@@ -25,12 +29,14 @@ function getDoctors (){
             type: "dentist",
             fields: [
                 {
-                    name: "Обычное давление",
-                    type: "text"
+                    name: "Normal pressure",
+                    type: "text",
+                    id: "pressure"
                 },
                 {
-                    name: "Дата последнего посещения",
-                    type: "date"
+                    name: "Date last visited",
+                    type: "date",
+                    id: "lastVisited"
                 }
             ]
         },
@@ -38,12 +44,14 @@ function getDoctors (){
             type: "therapist",
             fields: [
                 {
-                    name: "Обычное давление",
-                    type: "text"
+                    name: "Normal pressure",
+                    type: "text",
+                    id: "pressure"
                 },
                 {
-                    name: "Возраст",
-                    type: "text"
+                    name: "Age",
+                    type: "text",
+                    id: "age"
                 }
             ]
         }
