@@ -56,6 +56,7 @@
         // Открытые модалки
         createVisit.addEventListener('click', function (e) {
             e.stopPropagation();
+            resetInput(modalCard.getAttribute('id'));
             modalCard.classList.remove('modal-card--hide');
         });
 
@@ -82,32 +83,35 @@
             return el;
         }
 
-        // Минимальная дата приема = текущая дата
-        function setMinDate(currDate, el) {
-            let year = currDate.getFullYear(),
-                month = (currDate.getMonth() + 1) > 9 ? (currDate.getMonth() + 1) : '0' + (currDate.getMonth() + 1),
-                date = currDate.getDate();
-            el.setAttribute('min', `${year}-${month}-${date}`);
-        }
-
-        setMinDate(new Date(), inputDate);
-
-
         // Наполнение селекта докторов и полей с БД
         doctors.forEach(e => {
 
             // Селекты
             const wrapperOption = document.createElement('div');
-            wrapperOption.innerHTML = `<option value="${e.type}" data-id="type" class="select-doctor__option">${e.type}</option>`;
+            wrapperOption.innerHTML = `<option 
+                                            value="${e.type}" 
+                                            data-id="type" 
+                                            class="select-doctor__option">${e.type}
+                                        </option>`;
             selectDoctor.appendChild(wrapperOption.firstElementChild)
 
             // Поля к заполеннию
             const wrapperDiv = document.createElement('div');
-            wrapperDiv.innerHTML = `<div class="input-box input-box__special input-box__special--hide" id="input-box__${e.type}">`;
+            wrapperDiv.innerHTML = `<div 
+                                        class="input-box input-box__special input-box__special--hide"
+                                        id="input-box__${e.type}"
+                                    >`;
 
             e.fields.forEach(ev => {
                 const wrapperInput = document.createElement('div');
-                wrapperInput.innerHTML = `<input class="input-field" type="${ev.type}" placeholder="${ev.name}" data-id="${ev.id}" required="">`;
+                wrapperInput.innerHTML = `<input 
+                                            class="input-field" 
+                                            type="${ev.type}" 
+                                            placeholder="${ev.type !== 'date' ? ev.name : '' }" 
+                                            data-name="${ev.name}"
+                                            data-id="${ev.id}" 
+                                            ${ev.required ? 'data-required="true"' : null}
+                                        >`;
                 wrapperDiv.firstElementChild.appendChild(wrapperInput.firstElementChild);
             });
 
@@ -132,7 +136,7 @@
             let lastIndexCards = 0;
 
             return function ({name, type, reason, ...other}) {
-                let index = ++lastIndexCards;
+                lastIndexCards++;
 
                 let str = '';
                 for (let i in other) {
@@ -141,9 +145,9 @@
                 }
 
                 const wrapperDiv = document.createElement('div');
-                const cartGutter = index * DEFAULT_GUTTER + DEFAULT_GUTTER;
+                const cartGutter = lastIndexCards * DEFAULT_GUTTER + DEFAULT_GUTTER;
                 wrapperDiv.innerHTML = `
-                <div class="record-card" draggable="true" id="record-card_${index}" data-index="${index}" style="left: ${cartGutter}px; top: ${cartGutter}px; z-index: ${index}">
+                <div class="record-card" draggable="true" id="record-card_${lastIndexCards}" data-index="${lastIndexCards}" style="left: ${cartGutter}px; top: ${cartGutter}px; z-index: ${lastIndexCards}">
                     <div class="close-btn record-card__close">
                         <i class="fas fa-trash-alt"></i>
                     </div>
@@ -176,7 +180,7 @@
                     });
 
 
-                let recordCard = document.getElementById(`record-card_${index}`);
+                let recordCard = document.getElementById(`record-card_${lastIndexCards}`);
                 let dragArea = document.getElementById('cards-container');
                 let offsetX;
                 let offsetY;
@@ -236,27 +240,30 @@
             }
         })();
 
-        // Проверка заполенніх полей
+        // Проверка заполенных полей
         function checkRequired(idEl) {
             let resCheck = true;
-            const arrCheck = document.querySelectorAll(`#${idEl} [required]`);
-
+            const arrCheck = document.querySelectorAll(`#${idEl} [data-required="true"]`);
+        
             arrCheck.forEach(e => {
+                e.classList.remove('err-field');
+    
                 if (e.parentElement.classList.value.indexOf('hide') < 0) {
                     if (e.value.length === 0) {
                         resCheck = false;
+                        e.classList.add('err-field');
                     }
                 }
-            });
-
-            return resCheck
+            })
+    
+            return resCheck;
         }
 
         // Получение всех обязательно заполненных полей
         function getAllInputForm(idEl) {
             resObj = {};
-            const arrInp = document.querySelectorAll(`#${idEl} [required]`);
-
+            const arrInp = document.querySelectorAll(`#${idEl} [data-required="true"]`);
+        
             arrInp.forEach(e => {
                 if (e.parentElement.classList.value.indexOf('hide') < 0) {
                     if (e.tagName === 'SELECT') {
@@ -266,9 +273,19 @@
                         resObj[e.getAttribute('data-id')] = e.value;
                     }
                 }
-            });
+            })
+    
+            return resObj;
+        }
 
-            return resObj
+        // Стирание всех инпутов
+        function resetInput(idEl) {
+            const arrInp = document.querySelectorAll(`#${idEl} .input-field`);
+            
+            arrInp.forEach(e => {
+                e.value = "";
+                e.classList.remove('err-field');
+            });
         }
 
         // Сохранение карточек в localStorage
@@ -282,9 +299,12 @@
 
         // Сабмит формы карточки
         submitModal.addEventListener('click', function (e) {
+            e.preventDefault();
+
             const idForm = this.parentElement.getAttribute('id');
 
             if (checkRequired(idForm)) {
+                
                 const type = selectDoctor.value;
                 const comment = document.getElementById('input-comment');
 
@@ -349,7 +369,7 @@ function getDoctors (){
             fields: [
                 {
                     name: "Date last visited",
-                    type: "date",
+                    type: "text",
                     id: "lastVisited",
                     required: true
                 }
