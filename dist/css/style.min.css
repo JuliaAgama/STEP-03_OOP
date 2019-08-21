@@ -714,6 +714,29 @@ body {
   display: none;
 }
 
+.err-field {
+  border-color: red;
+  color: red;
+  /* Firefox 19+ */
+  /* Firefox 18- */
+}
+
+.err-field::-webkit-input-placeholder {
+  color: red;
+}
+
+.err-field::-moz-placeholder {
+  color: red;
+}
+
+.err-field:-moz-placeholder {
+  color: red;
+}
+
+.err-field:-ms-input-placeholder {
+  color: red;
+}
+
 /********** RECORD-CARD **********/
 .record-card {
   position: absolute;

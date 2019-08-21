@@ -213,3 +213,13 @@
         display: none;
     }
 }
+
+.err-field {
+    border-color: red;
+    color: red;
+
+    &::-webkit-input-placeholder {color:red;}
+    &::-moz-placeholder          {color:red;}/* Firefox 19+ */
+    &:-moz-placeholder           {color:red;}/* Firefox 18- */
+    &:-ms-input-placeholder      {color:red;}
+}

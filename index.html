@@ -42,12 +42,12 @@
                         </select>
     
                         <div class="input-box input-box__common input-box__common--hide" id="input-box__common">
-                            <input type="text" class="input-field" id="input-reason" required placeholder="reason / problem" data-id="reason">
-                            <input type="date" class="input-field" id="input-date" required placeholder="Date visit" data-id="date">
-                            <input type="text" class="input-field" id="input-patient" required placeholder="your full name" data-id="name">
+                            <input type="text" class="input-field" id="input-reason" placeholder="reason / problem" data-id="reason" data-required="true" data-name="Reason / problem">
+                            <input type="text" class="input-field" id="input-date" data-id="date" data-required="true" data-name="Date visit" placeholder="Date visit">
+                            <input type="text" class="input-field" id="input-patient" placeholder="your full name" data-id="name" data-required="true" data-name="Full Name">
                         </div>
     
-                        <textarea name="input-comment" class="input-comment input-comment--hide" id="input-comment" maxlength ="400" rows="3" wrap="hard" placeholder="Your comments here" data-id="comment"></textarea>
+                        <textarea name="input-comment" class="input-comment input-comment--hide" id="input-comment" maxlength ="400" rows="3" cols="3" wrap="hard" placeholder="Your comments here" data-id="comment"></textarea>
                         
                         <input type="submit" class="submit-btn submit-btn--hide" id="submit-btn__modal" value="CREATE">
     

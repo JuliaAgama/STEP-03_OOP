@@ -34,7 +34,7 @@ function getDoctors (){
             fields: [
                 {
                     name: "Date last visited",
-                    type: "date",
+                    type: "text",
                     id: "lastVisited",
                     required: true
                 }
