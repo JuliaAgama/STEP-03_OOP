@@ -140,7 +140,7 @@
 
                 let str = '';
                 for (let i in other) {
-                    const nameVal = document.querySelector(`[data-id=${i}]`).getAttribute('placeholder');
+                    const nameVal = document.querySelector(`[data-id=${i}]`).getAttribute('data-name');
                     str += `<p>${nameVal}: <span>${other[i]}</span></p>`;
                 }
 
@@ -166,8 +166,7 @@
                     </div>
                         
                     <div class="record-card__more-less">
-                        <p class="record-card__more-less--more">show more</p>
-                        <p class="record-card__more-less--less hidden">show less</p>
+                        <p class="record-card__more-less--more" id="show-more-card">show more</p>
                     </div>
                 </div>`;
 
@@ -224,6 +223,15 @@
                         this.style.left = (e.pageX - dragArea.offsetLeft - offsetX) + 'px';
                     }
                 });
+
+                // Показ и скрытие доп полей
+                const showMore = card.querySelector("#show-more-card");
+                const showMoreSection = card.querySelector(`#record-card__${type}`);
+                showMore.addEventListener('click', function (e) {
+                    let curr = this.innerText.toLowerCase();
+                    this.innerText = `${curr === 'show more' ? 'show less' : 'show more' }`;
+                    showMoreSection.classList.toggle('hidden');
+                });
             }
         }
 
@@ -274,7 +282,7 @@
                     }
                 }
             })
-    
+            
             return resObj;
         }
 

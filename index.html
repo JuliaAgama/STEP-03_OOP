@@ -37,7 +37,7 @@
                     <div class="close-btn modal-card__close" id="modal-card-close"><i class="far fa-window-close"></i></div>
     
                     <form action="select.php" method="post" class="modal-form" id="modal-form">
-                        <select name="select-doctor" id="select-doctor" class="select-doctor" autofocus required>
+                        <select name="select-doctor" id="select-doctor" class="select-doctor" autofocus data-required="true">
                             <option class="select-doctor__option--disabled" disabled selected>Select  doctor</option>
                         </select>
     
@@ -47,8 +47,8 @@
                             <input type="text" class="input-field" id="input-patient" placeholder="your full name" data-id="name" data-required="true" data-name="Full Name">
                         </div>
     
-                        <textarea name="input-comment" class="input-comment input-comment--hide" id="input-comment" maxlength ="400" rows="3" cols="3" wrap="hard" placeholder="Your comments here" data-id="comment"></textarea>
-                        
+                        <textarea name="input-comment" class="input-comment input-comment--hide" id="input-comment" maxlength ="400" rows="3" cols="3" wrap="hard" placeholder="Your comments here" data-id="comment" data-name="Comments"></textarea>
+                       
                         <input type="submit" class="submit-btn submit-btn--hide" id="submit-btn__modal" value="CREATE">
     
                     </form>
