@@ -321,22 +321,26 @@ function getDoctors (){
                 {
                     name: "Normal pressure",
                     type: "text",
-                    id: "pressure"
+                    id: "pressure",
+                    required: true
                 },
                 {
                     name: "Body mass index",
                     type: "text",
-                    id: "massIndex"
+                    id: "massIndex",
+                    required: true
                 },
                 {
                     name: "Past diseases of the cardiovascular system",
                     type: "text",
-                    id: "pastDiseases"
+                    id: "pastDiseases",
+                    required: true
                 },
                 {
                     name: "Age",
                     type: "text",
-                    id: "age"
+                    id: "age",
+                    required: true
                 }
             ]
         },
@@ -344,14 +348,10 @@ function getDoctors (){
             type: "dentist",
             fields: [
                 {
-                    name: "Normal pressure",
-                    type: "text",
-                    id: "pressure"
-                },
-                {
                     name: "Date last visited",
                     type: "date",
-                    id: "lastVisited"
+                    id: "lastVisited",
+                    required: true
                 }
             ]
         },
@@ -359,14 +359,10 @@ function getDoctors (){
             type: "therapist",
             fields: [
                 {
-                    name: "Normal pressure",
-                    type: "text",
-                    id: "pressure"
-                },
-                {
                     name: "Age",
                     type: "text",
-                    id: "age"
+                    id: "age",
+                    required: true
                 }
             ]
         }
