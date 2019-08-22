@@ -298,6 +298,15 @@
     // Стирание всех инпутов
     function resetInput(idEl) {
         const arrInp = document.querySelectorAll(`#${idEl} .input-field`);
+        const viewInp = document.querySelector(`#${idEl} .input-box__special:not(.input-box__special--hide)`);
+        const viewInpCommon = document.querySelector(`#${idEl} .input-box__common:not(.input-box__common--hide)`);
+        const viewInpComment = document.querySelector(`#${idEl} .input-comment:not(.input-comment--hide)`);
+        const viewInpSelect = document.querySelector(`#${idEl} .select-doctor`);
+
+        if (viewInp) viewInp.classList.add('input-box__special--hide');
+        if (viewInpCommon) viewInpCommon.classList.add('input-box__common--hide');
+        if (viewInpComment) viewInpComment.classList.add('input-comment--hide');
+        viewInpSelect.value = viewInpSelect.options[0].value;
         
         arrInp.forEach(e => {
             e.value = "";
