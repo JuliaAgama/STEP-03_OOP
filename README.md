@@ -21,10 +21,14 @@ Tasks:
 Gulp setup: Julia Verchyonova.
 
 HTML: Julia Verchyonova.
-
 CSS: Julia Verchyonova.
 
-...
+Data Base: Roman Loboda
+Classes: Roman Loboda
+Modal: Roman Loboda
+Create Card: Roman Loboda
+Storage: Roman Loboda
+Helpers: Roman Loboda
 
 ...
 
