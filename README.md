@@ -24,7 +24,7 @@ Julia Verchyonova:
 - HTML;
 - SCSS;
 - product testing;
-- JS issues solving coordination;
+- coordination of various JS issues solving;
 
 
 Roman Loboda:
