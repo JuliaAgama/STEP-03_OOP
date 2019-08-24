@@ -6,6 +6,8 @@
             this.reason = reason;
             this.date = date;
             this.name = name;
+            this.ind = (Visit.indexCard +1).toString();
+
         }
 
         setStorage() {
@@ -19,7 +21,7 @@
         createCard( cardsContainer, cardInput = this ) {
             Visit.indexCard++;
 
-            let { name, type, reason, ...other} = cardInput;
+            let { name, type, reason, ind, ...other} = cardInput;
             let str = '';
             
             for (let i in other) {
@@ -69,6 +71,21 @@
                 .querySelector('.fa-trash-alt')
                 .addEventListener('click', function() {
                     card.parentNode.removeChild(card);
+
+                    let parsedArray = JSON.parse(localStorage.ClientCard);
+                    let getTheCardId = this.parentNode.parentNode.getAttribute('data-index');
+
+
+                    parsedArray.forEach((e) => {
+                        let ourTarget = Object.values(e).includes(`${getTheCardId}`);
+                        if (ourTarget) {
+                            parsedArray.splice(parsedArray.indexOf(ourTarget, 1))
+                        }
+                    });
+
+                    localStorage.setItem('ClientCard', JSON.stringify(parsedArray));
+
+
                     if (document.querySelectorAll('.record-card').length === 0) {
                         document.querySelector('.cards-container').appendChild(wrapperDiv);
                         wrapperDiv.innerHTML = "<div class ='cards-container__empty'> <p>no items have been added </p> </div>"
@@ -99,7 +116,7 @@
             });
 
             card.addEventListener('drag', function (e) {
-                console.log(e.pageY, offsetY, cardsContainer.offsetHeight,cardsContainer.offsetTop, card.offsetHeight);
+                // console.log(e.pageY, offsetY, cardsContainer.offsetHeight,cardsContainer.offsetTop, card.offsetHeight);
 
                 if ((e.pageY < cardsContainer.offsetTop + offsetY) || (e.pageX < cardsContainer.offsetLeft + offsetX)
                     || (e.pageY > cardsContainer.offsetHeight + cardsContainer.offsetTop - (card.offsetHeight- offsetY))
@@ -302,6 +319,7 @@
                     resObj[el.getAttribute('data-id')] = el.value;
                 } else {
                     resObj[e.getAttribute('data-id')] = e.value;
+
                 }
             }
         })
