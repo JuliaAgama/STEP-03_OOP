@@ -16,21 +16,25 @@ Julia Verchyonova & Oleksandr Shaporda & Roman Loboda
 
 
 
-Tasks: 
+Tasks & Responsibilities: 
 
-Gulp setup: Julia Verchyonova.
 
-HTML: Julia Verchyonova.
-CSS: Julia Verchyonova.
+Julia Verchyonova:
+- Gulp setup;
+- HTML;
+- SCSS;
+- product testing;
+- JS issues solving coordination;
 
-Data Base: Roman Loboda
-Classes: Roman Loboda
-Modal: Roman Loboda
-Create Card: Roman Loboda
-Storage: Roman Loboda
-Helpers: Roman Loboda
 
-...
+Roman Loboda:
+- JS: Card creation;
+- JS: Local Storage;
+
+Olexandr Shaporda:
+- JS: Drag&Drop;
+- JS: Local Storage;
+
 
 
 Web Preview link: https://juliaagama.github.io/STEP-03_OOP/
