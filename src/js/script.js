@@ -69,6 +69,10 @@
                 .querySelector('.fa-trash-alt')
                 .addEventListener('click', function() {
                     card.parentNode.removeChild(card);
+                    if (document.querySelectorAll('.record-card').length === 0) {
+                        document.querySelector('.cards-container').appendChild(wrapperDiv);
+                        wrapperDiv.innerHTML = "<div class ='cards-container__empty'> <p>no items have been added </p> </div>"
+                    }
                 });
 
                 
@@ -95,7 +99,11 @@
             });
 
             card.addEventListener('drag', function (e) {
-                if ((e.pageY < cardsContainer.offsetTop + offsetY) || (e.pageX < cardsContainer.offsetLeft + offsetX)) {
+                console.log(e.pageY, offsetY, cardsContainer.offsetHeight,cardsContainer.offsetTop, card.offsetHeight);
+
+                if ((e.pageY < cardsContainer.offsetTop + offsetY) || (e.pageX < cardsContainer.offsetLeft + offsetX)
+                    || (e.pageY > cardsContainer.offsetHeight + cardsContainer.offsetTop - (card.offsetHeight- offsetY))
+                    || (e.pageX > cardsContainer.offsetWidth + cardsContainer.offsetLeft - (card.offsetWidth- offsetX)))  {
                     card.style.borderColor = "red";
                 } else {
                     card.style.borderColor = "#3fafbc";
@@ -104,12 +112,18 @@
 
             card.addEventListener('dragend', function (e) {
                 card.style.borderColor = "#3fafbc";
-                if ((e.pageY < cardsContainer.offsetTop + offsetY) || (e.pageX < cardsContainer.offsetLeft + offsetX)) {
+                if ((e.pageY < cardsContainer.offsetTop + offsetY) || (e.pageX < cardsContainer.offsetLeft + offsetX)
+                    || (e.pageY > cardsContainer.offsetHeight + cardsContainer.offsetTop - (card.offsetHeight- offsetY))
+                    || (e.pageX > cardsContainer.offsetWidth + cardsContainer.offsetLeft - (card.offsetWidth- offsetX))) {
                     console.log('can not drag there');
                 } else {
                     this.style.top = (e.pageY - cardsContainer.offsetTop - offsetY) + 'px';
                     this.style.left = (e.pageX - cardsContainer.offsetLeft - offsetX) + 'px';
                 }
+            });
+
+            cardsContainer.addEventListener('dragover', function (e) {
+                e.preventDefault();
             });
 
             // Показ и скрытие доп полей
